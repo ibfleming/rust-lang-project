@@ -1,7 +1,0 @@
-{
-    "editor.fontSize": 14,
-    "editor.fontFamily": "'FiraCode Nerd Font Mono'",
-    "terminal.integrated.cursorStyle": "line",
-    "terminal.integrated.cursorBlinking": false,
-    "terminal.integrated.copyOnSelection": true
-}
