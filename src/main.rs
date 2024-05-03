@@ -1,22 +1,43 @@
-// Selection Sort in Rust
+trait Animal {
+    fn make_sound(&self);
+}
 
-fn selection_sort(arr: &mut [i32]) {
-    let n = arr.len();
-    for i in 0..n-1 {
-        let mut min_idx = i;
-        for j in i+1..n {
-            if arr[j] < arr[min_idx] {
-                min_idx = j;
-            }
-        }
-        if min_idx != i {
-            arr.swap(min_idx, i)
-        }
+impl Animal for Dog {
+    fn make_sound(&self) {
+        println!("Bark!");
     }
 }
 
+struct Dog;
+
+trait Cat: Animal {
+    fn purr(&self);
+}
+
+struct Moesha;
+
+impl Animal for Moesha {
+    fn make_sound(&self) {
+        println!("Meow!");
+    }
+}
+
+impl Cat for Moesha {
+    fn purr(&self) {
+        println!("Purr!");
+    }
+}
+
+fn describe(animal: &dyn Animal) {
+    animal.make_sound();
+}
+
 fn main() {
-    let mut arr = [64, 25, 12, 22, 11];
-    selection_sort(&mut arr);
-    println!("Sorted array: {:?}", arr);
+    let dog = Dog;
+    let moesha = Moesha;
+
+    describe(&dog);
+
+    moesha.make_sound();
+    moesha.purr();
 }
