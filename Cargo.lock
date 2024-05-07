@@ -14,13 +14,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "hello-rust"
-version = "0.1.0"
-dependencies = [
- "ferris-says",
-]
-
-[[package]]
 name = "smallvec"
 version = "1.13.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -47,3 +40,10 @@ name = "unicode-width"
 version = "0.1.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "68f5e5f3158ecfd4b8ff6fe086db7c8467a2dfdac97fe420f2b7c4aa97af66d6"
+
+[[package]]
+name = "unit-converter"
+version = "0.1.0"
+dependencies = [
+ "ferris-says",
+]

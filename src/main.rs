@@ -22,57 +22,9 @@
 
 */
 
-enum UnitType {
-    Temperature,
-    Time,
-    Length,
-    Mass,
-    Currency,
-}
-
-enum Unit {
-    Celsius,
-    Fahrenheit,
-    Kelvin,
-}
-
-use UnitType::*;
-use Unit::*;
+use unit_converter::*;
+use unit_converter::TemperatureUnits::*;
 
 fn main() {
-
-}
-
-/// Temperature Conversion Function
-///
-/// # Parameters
-///
-/// * `a` - From temperature value of conversion.
-/// * `a_unit` - Unit of the `a` temperature value.
-/// * `b` - To temperature value of conversion.
-///  * `b_unit` - Unit of the 'b' temperature value.
-/// 
-/// # Returns
-///
-/// * `f64` - Final value of the conversion
-///
-/// ```
-fn temperature_conversion(a: f64, from_unit: Unit, to_unit: Unit) -> f64 {
-
-    match from_unit {
-        Celsius => {
-            match to_unit {
-                Celsius => {
-                    println!("Both units are the same.");
-                    return a;
-                },
-                Fahrenheit => return (a * 9.0 / 5.0) + 32.0,
-                Kelvin => return a + 273.15,
-            }
-        },
-        Fahrenheit => todo!(),
-        Kelvin => todo!(),
-    }
-
-    return 0.0;
+    temperature_conversion(64.0, Fahrenheit, Kelvin);
 }
